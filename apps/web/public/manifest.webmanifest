@@ -1,0 +1,19 @@
+{
+  "name": "anchor-scheduler",
+  "short_name": "Anchors",
+  "description": "Local-first day scheduler built on fixed anchors and time-blocked tasks.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#14161a",
+  "theme_color": "#14161a",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any",
+      "purpose": "any maskable"
+    }
+  ]
+}

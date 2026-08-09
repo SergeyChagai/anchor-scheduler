@@ -1,0 +1,14 @@
+node_modules/
+dist/
+*.tsbuildinfo
+.DS_Store
+.env
+.env.*
+coverage/
+# meronq machine-local state (memory db + regenerable scan output)
+.meronq/local/*
+!.meronq/local/.gitkeep
+
+# lockfiles from other package managers (repo standardizes on pnpm)
+package-lock.json
+yarn.lock

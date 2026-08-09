@@ -1,0 +1,15 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "noEmit": true,
+    "declaration": false,
+    "declarationMap": false,
+    "types": ["vite/client", "node"],
+    "paths": {
+      "@anchor-scheduler/core": ["../../packages/core/src/index.ts"]
+    }
+  },
+  "include": ["src", "test", "vite.config.ts"]
+}

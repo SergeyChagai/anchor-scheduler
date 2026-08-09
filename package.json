@@ -1,0 +1,17 @@
+{
+  "name": "anchor-scheduler",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Local-first, cross-platform day scheduler built on fixed anchors + time-blocked tasks.",
+  "license": "MIT",
+  "type": "module",
+  "packageManager": "pnpm@9.7.0",
+  "scripts": {
+    "build": "pnpm -r build",
+    "test": "pnpm -r test",
+    "typecheck": "pnpm -r typecheck"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
