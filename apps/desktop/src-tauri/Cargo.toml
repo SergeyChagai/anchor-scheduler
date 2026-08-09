@@ -1,0 +1,20 @@
+[package]
+name = "anchor-scheduler"
+version = "0.0.1"
+description = "Local-first day scheduler built on fixed anchors and time-blocked tasks."
+authors = ["Sergey Chagai"]
+license = "MIT"
+edition = "2021"
+rust-version = "1.77"
+
+[lib]
+# The shell lives in the library so the same entry point can serve the mobile
+# targets later; main.rs is only the desktop binary wrapper.
+name = "anchor_scheduler_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = [] }

@@ -68,7 +68,11 @@ window.addEventListener("storage", () => {
   draw();
 });
 
-if ("serviceWorker" in navigator && import.meta.env.PROD) {
+// The Tauri shell serves the bundle from its own protocol and is already
+// offline by nature, so the service worker is a browser-only concern.
+const inTauri = "__TAURI_INTERNALS__" in window;
+
+if ("serviceWorker" in navigator && import.meta.env.PROD && !inTauri) {
   window.addEventListener("load", () => {
     navigator.serviceWorker.register("/sw.js").catch(() => {
       // Offline support is a nicety; the app works without it.

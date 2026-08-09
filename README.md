@@ -16,10 +16,11 @@ thin native glance surface (SwiftUI / Wear OS tile), not part of this codebase.
 ```
 packages/core   framework-agnostic engine (schedule + task blocking) — tested
 apps/web        local-first web/PWA surface over the engine — tested
+apps/desktop    Tauri 2 shell around the web surface
 ```
 
-Planned surfaces (not built yet): desktop/mobile via Tauri 2 wrapping the web
-UI; sync via Cloudflare (D1 / Durable Objects) once a second device exists.
+Sync via Cloudflare (D1 / Durable Objects) is still ahead, and only once a
+second device exists.
 
 ## The model
 
@@ -62,6 +63,23 @@ are stored per calendar day, so yesterday's day stays as you left it.
 pnpm install
 pnpm --filter @anchor-scheduler/web dev     # http://localhost:5173
 ```
+
+## The desktop shell
+
+`apps/desktop` is a Tauri 2 window around the same web surface — no logic of
+its own, so desktop stays a port rather than a fork. Needs a Rust toolchain.
+
+```bash
+pnpm --filter @anchor-scheduler/desktop dev     # starts vite, opens the window
+pnpm --filter @anchor-scheduler/desktop bundle  # installers in src-tauri/target
+```
+
+`bundle` is deliberately not called `build`, so a plain `pnpm -r build` doesn't
+drag a full release compile of the Rust shell along with it.
+
+The icon set is generated from source rather than committed as an opaque blob:
+`pnpm --filter @anchor-scheduler/desktop icons` redraws the mark and fans it
+out into every platform size.
 
 ## Quick start
 

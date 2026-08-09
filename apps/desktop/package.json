@@ -1,0 +1,16 @@
+{
+  "name": "@anchor-scheduler/desktop",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "description": "Tauri 2 shell around the web surface — desktop today, mobile targets later.",
+  "scripts": {
+    "dev": "tauri dev",
+    "bundle": "tauri build",
+    "icons": "node scripts/make-icon.mjs && tauri icon src-tauri/icons/source.png --output src-tauri/icons",
+    "check": "cargo check --manifest-path src-tauri/Cargo.toml"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.1.0"
+  }
+}
